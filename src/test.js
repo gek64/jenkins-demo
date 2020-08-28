@@ -1,7 +1,7 @@
 const axios = require('axios')
 require('./index')
 
-axios.get('http://127.0.0.1:6666/')
+axios.get('http://127.0.0.1:5000/')
     .then(r => {
         console.log(r)
         process.exit(0)
