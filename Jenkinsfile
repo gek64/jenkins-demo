@@ -5,21 +5,23 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building....'
-                bat 'npm ci'
-                bat 'npm run dev'
+                sh 'npm ci'
+                sh 'npm pack'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing....'
-                bat 'npm ci'
-                bat 'npm run dev'
+                sh 'npm ci'
+                sh 'npm test'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                archiveArtifacts artifacts: '**/dist/*.txt', fingerprint: true
+                sh 'cp *.tgz /var/local/'
+                sh 'tar -xzf /var/local/*.tgz'
+                sh 'systemctl restart jenkins-demo'
             }
         }
     }

@@ -1,6 +1,13 @@
 const fs = require('fs')
+const emulator = require('emulatorjs')
+const setter = new emulator.Setter
 
 let str = Date.now()
+
+let obj = {
+    'name': 'cname',
+    'age|1-200': 1
+}
 
 fs.mkdir('dist', function (err) {
     if (err) {
@@ -18,3 +25,8 @@ fs.writeFile('dist/time.txt', str, function (err) {
     }
     console.log('data write completed')
 })
+
+
+setter.configureRandomArray('/', obj, 1, 100)
+setter.start(80)
+console.log('http://localhost')
