@@ -28,5 +28,5 @@ fs.writeFile('dist/time.txt', str, function (err) {
 
 
 setter.configureRandomArray('/', obj, 1, 100)
-setter.start(80)
-console.log('http://localhost')
+setter.start(6666)
+console.log('http://localhost:6666')
