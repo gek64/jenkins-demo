@@ -12,7 +12,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing....'
-                sh 'npm ci'
                 sh 'npm test'
             }
         }
@@ -20,7 +19,10 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'cp *.tgz /var/local/'
-                sh 'tar -xzf /var/local/*.tgz'
+				dir("/var/local/")
+                sh 'tar -xzf /var/local/*.tgz -C /var/local/'
+				dir("/var/local/package/")
+				sh 'npm install'
                 sh 'systemctl restart jenkins-demo'
             }
         }
