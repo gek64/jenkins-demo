@@ -1,23 +1,12 @@
 {
-  "name": "emulatorjs",
-  "version": "0.0.3",
-  "description": "server api emulator",
-  "main": "src/index.js",
+  "name": "jenkins-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "node src/dev-test.js",
-    "test": "node src/index.js"
+    "dev": "node src/index.js"
   },
-  "keywords": [
-    "mock",
-    "api",
-    "emulator",
-    "express"
-  ],
-  "author": "cekys",
-  "license": "MIT",
-  "dependencies": {
-    "better-mock": "^0.2.6",
-    "cors": "^2.8.5",
-    "express": "^4.17.1"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
