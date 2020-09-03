@@ -10,7 +10,7 @@
 
 ### pipeline设置
 
-- 流水线选择使用`git`，`git`地址填写 https://github.com/cekys/jenkins-demo.git ，
+- 流水线选择使用`git`，`git`地址填写 `https://github.com/cekys/jenkins-demo.git` 
 - 凭证设置好(如果需要的话)
 - `git pull` 轮询请按需设置，例如`H H/1 * * *`每小时检测一次状态
 
